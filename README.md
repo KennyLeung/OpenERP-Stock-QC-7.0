@@ -1,4 +1,4 @@
-OpenERP-Stock-QC
+OpenERP-Stock-QC-7.0
 ======================
 
 OpenERP 质量控制 / 质量管理模块
