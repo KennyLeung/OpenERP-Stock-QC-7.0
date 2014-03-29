@@ -1,0 +1,9 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+stock_qc.access_stock_location_qc_user,stock.location qc user,stock.model_stock_location,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE
+stock_qc.access_stock_warehouse_qc_user,stock.warehouse qc user,stock.model_stock_warehouse,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE
+stock_qc.access_stock_picking_qc_user,stock.picking qc user,delivery.model_stock_picking,stock_qc.group_qc_user,TRUE,TRUE,FALSE,FALSE
+stock_qc.access_stock_picking_in_qc_user,stock.picking.in qc user,delivery.model_stock_picking_in,stock_qc.group_qc_user,TRUE,TRUE,FALSE,FALSE
+stock_qc.access_stock_move_qc_user,stock.move qc user,delivery.model_stock_move,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE
+stock_qc.access_stock_tracking_qc_user,stock.tracking qc user,stock.model_stock_tracking,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE
+stock_qc.access_stock_production_lot_qc_user,stock.production.lot qc user,stock.model_stock_production_lot,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE
+stock_qc.access_stock_production_lot_revision_qc_user,stock.production.lot.revision qc user,stock.model_stock_production_lot_revision,stock_qc.group_qc_user,TRUE,FALSE,FALSE,FALSE

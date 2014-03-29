@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Quality Control"
+            id="menu_qc_root"
+            groups="group_qc_manager,group_qc_user"
+            sequence="65"/>
+        <menuitem id="menu_qc_mgmt" name="Quality Control" parent="menu_qc_root" sequence="10"/>
+
+        <record id="view_picking_in_form_qc" model="ir.ui.view">
+            <field name="name">stock.picking.in.form.qc</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_process']" position="before">
+                    <button name="action_qc" states="qc" string="QC Done" type="object" class="oe_highlight" groups="stock_qc.group_qc_user"/>
+                </xpath>
+                <xpath expr="//button[@name='action_process']" position="attributes">
+                    <attribute name="groups">stock.group_stock_user</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="groups">stock.group_stock_user</attribute>
+                </xpath>
+                <xpath expr="//button[@states='done']" position="attributes">
+                    <attribute name="groups">stock.group_stock_user</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">draft,qc,assigned,done</attribute>
+                </xpath>
+                <field name="stock_journal_id" position="after">
+                    <field name="qc_result"/>
+                    <field name="qc_checker"/>
+                    <field name="qc_note"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_picking_in_tree_qc" model="ir.actions.act_window">
+            <field name="name">Quality Control</field>
+            <field name="res_model">stock.picking.in</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','in'),('state','=','qc')]</field>
+            <field name="context">{'contact_display': 'partner_address', 'default_type': 'in'}</field>
+            <field name="search_view_id" ref="stock.view_picking_in_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                No picking for quality control at this moment. 
+              </p>
+            </field>
+        </record>
+
+        <record id="action_picking_in_tree_all" model="ir.actions.act_window">
+            <field name="name">Quality Control</field>
+            <field name="res_model">stock.picking.in</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','in')]</field>
+            <field name="context">{'contact_display': 'partner_address', 'default_type': 'in'}</field>
+            <field name="search_view_id" ref="stock.view_picking_in_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                No picking for quality control at this moment. 
+              </p>
+            </field>
+        </record>
+
+        <record id="view_picking_in_search_qc" model="ir.ui.view">
+            <field name="name">stock.picking.in.search</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='available']" position="before">
+                    <filter icon="terp-check" name="qc" string="Waiting for QC" domain="[('state','=','qc')]" help="Waiting for Quality Control."/>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem id="menu_qc_picking" name="Waiting for QC" parent="menu_qc_mgmt" 
+            action="action_picking_in_tree_qc" sequence="10"/>
+
+        <menuitem id="menu_qc_picking_all" name="Picking List" parent="menu_qc_mgmt" 
+            action="action_picking_in_tree_all" sequence="20"/>
+
+    </data>
+</openerp>

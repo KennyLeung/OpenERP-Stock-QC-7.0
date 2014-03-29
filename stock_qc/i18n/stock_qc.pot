@@ -1,0 +1,166 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* stock_qc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131004-231118\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-24 14:21+0000\n"
+"PO-Revision-Date: 2014-01-24 14:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_qc
+#: model:ir.ui.menu,name:stock_qc.menu_qc_picking
+#: view:stock.picking.in:0
+msgid "Waiting for QC"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model,name:stock_qc.model_stock_picking_in
+msgid "Incoming Shipments"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model,name:stock_qc.model_stock_picking
+#: model:ir.ui.menu,name:stock_qc.menu_qc_picking_all
+msgid "Picking List"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_checker
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_checker_3866
+#: field:stock.picking,qc_checker:0
+#: field:stock.picking.in,qc_checker:0
+msgid "QC Checker"
+msgstr ""
+
+#. module: stock_qc
+#: code:addons\stock_qc\stock.py:110
+#, python-format
+msgid "Error, no qc result!"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.actions.act_window,name:stock_qc.action_picking_in_tree_all
+#: model:ir.actions.act_window,name:stock_qc.action_picking_in_tree_qc
+#: model:ir.ui.menu,name:stock_qc.menu_qc_mgmt
+#: model:ir.ui.menu,name:stock_qc.menu_qc_root
+msgid "Quality Control"
+msgstr ""
+
+#. module: stock_qc
+#: selection:stock.picking,qc_result:0
+#: selection:stock.picking.in,qc_result:0
+msgid "Passed"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_note
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_note_3868
+#: field:stock.picking,qc_note:0
+#: field:stock.picking.in,qc_note:0
+msgid "QC Notes"
+msgstr ""
+
+#. module: stock_qc
+#: code:addons\stock_qc\stock.py:111
+#, python-format
+msgid "Please put a qc result on the picking list."
+msgstr ""
+
+#. module: stock_qc
+#: view:stock.picking.in:0
+msgid "QC Done"
+msgstr ""
+
+#. module: stock_qc
+#: selection:stock.picking,qc_result:0
+#: selection:stock.picking.in,qc_result:0
+msgid "Rejected"
+msgstr ""
+
+#. module: stock_qc
+#: model:res.groups,name:stock_qc.group_qc_manager
+msgid "QC Manager"
+msgstr ""
+
+#. module: stock_qc
+#: help:stock.picking,qc_result:0
+#: help:stock.picking.in,qc_result:0
+msgid "\n"
+"            * Passed: all products passed.\n"
+"\n"
+"            * Partial Passed: Some products have a problem.\n"
+"\n"
+"            * Rejected: all products have a problem.\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: stock_qc
+#: view:stock.picking.in:0
+msgid "draft,qc,assigned,done"
+msgstr ""
+
+#. module: stock_qc
+#: model:res.groups,name:stock_qc.group_qc_user
+msgid "QC User"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_date
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_date_3867
+#: field:stock.picking,qc_date:0
+#: field:stock.picking.in,qc_date:0
+msgid "QC Date"
+msgstr ""
+
+#. module: stock_qc
+#: view:stock.picking.in:0
+msgid "Waiting for Quality Control."
+msgstr ""
+
+#. module: stock_qc
+#: view:stock.picking.in:0
+msgid "stock.group_stock_user"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.module.category,description:stock_qc.module_category_stockqc
+msgid "Helps you manage your stock qc."
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.module.category,name:stock_qc.module_category_stockqc
+msgid "Stock QC"
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.actions.act_window,help:stock_qc.action_picking_in_tree_all
+#: model:ir.actions.act_window,help:stock_qc.action_picking_in_tree_qc
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                No picking for quality control at this moment. \n"
+"              </p>\n"
+"            "
+msgstr ""
+
+#. module: stock_qc
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_result
+#: model:ir.model.fields,field_description:stock_qc.field_stock_picking_qc_result_3865
+#: field:stock.picking,qc_result:0
+#: field:stock.picking.in,qc_result:0
+msgid "QC Result"
+msgstr ""
+
+#. module: stock_qc
+#: selection:stock.picking,qc_result:0
+#: selection:stock.picking.in,qc_result:0
+msgid "Partial Passed"
+msgstr ""
+
